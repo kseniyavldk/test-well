@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Montserrat:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+.content{
+    margin: 0 40px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: wrap;
+    .card{
+        width: 280px;
+        height: 400px;
+        background-color: #FFFFFF;
+        border: 1px solid black;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+       
+        .card-header{
+            background-color: #0D274D;
+            width: 100%;
+            p{                
+                color: #FFFFFF;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 16px;
+                font-weight: 700;
+                padding: 15px 16px;   
+                text-align: center;         
+            }
+        }
+         
+        .card-content{    
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .card-description{
+                margin: 6px 5px;
+                display: flex; 
+                align-items: center;
+                
+                .description{
+                    padding-left: 7px;
+                }
+            }
+            .price-description{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center; 
+                text-align: center;
+                margin-top: auto;
+                flex-grow: 1; 
+
+                .price-description__name{
+                    font-family: 'Lato', sans-serif;
+                    font-size: 15px;
+                    font-weight: 700;
+                    margin: 8px auto;
+                }
+                .price-description__price .highlighted {
+                    font-weight: 900;
+                    color: #0E9A0B;
+                    font-size: 20px;
+                  }
+            }
+            .description__meters{
+                display: flex;
+                flex-direction: row;
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));                
+                align-items: start;
+                position: relative;
+                
+                &:before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 20px; 
+                    width: calc(100% - 40px);
+                    height: 1px; 
+                    background-color: #00BCEB;                    
+                }
+                .column {
+                    display: flex;                    
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 7px 11px 0;  
+                    width: 50%;                 
+                    .meters {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 10px;
+                        img {
+                            margin-right: 15px;
+                        }
+                        p {
+                            text-decoration: underline;
+                            &:hover{
+                                color: #00BBEA;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }                           
+            }
+             
+        }    
+        .button {
+            background: #00BCEB;
+            color: #FFFFFF;
+            padding: 12px 13px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            display: flex;
+            justify-content: center;
+            margin: 17px 0;
+            margin-top: auto;
+            align-items: center;
+            transition: box-shadow 0.3s ease;
+            align-self: center;
+            &:hover{
+                box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2); 
+            }
+        }           
+    }      
+}
+
+@media screen and (max-width: 874px) {
+    .content{
+        display: flex;
+        flex-direction: column;
+        margin: 10px auto;
+    }    
+}
